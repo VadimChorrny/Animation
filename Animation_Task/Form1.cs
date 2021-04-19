@@ -12,6 +12,9 @@ namespace Animation_Task
 {
     public partial class Form1 : Form
     {
+        // variable
+        Random random = new Random();
+        Label mylab = new Label();
         public Form1()
         {
             InitializeComponent();
@@ -21,6 +24,12 @@ namespace Animation_Task
         {
             btnStop.Enabled = false; // default stop = false
 
+            //// Creating label using Label class
+            //Label mylab = new Label();
+            //mylab.BackColor = Color.Gold;
+            //mylab.Location = new Point(random.Next(254), random.Next(254));
+
+
             // STYLED HEAD PANEL
 
             //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -29,23 +38,32 @@ namespace Animation_Task
             //FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
         }
 
-        private void button2_Click(object sender, EventArgs e) // STOP
+        //STOP
+        private void button2_Click(object sender, EventArgs e)
         {
             timer1.Stop();
             timer1.Enabled = false;
             btnStop.Enabled = false;
             btnStart.Enabled = true;
         }
-
-        private void button1_Click(object sender, EventArgs e) // START
+        //START
+        private void button1_Click(object sender, EventArgs e)
         {
             timer1.Start();
             btnStart.Enabled = false;
             btnStop.Enabled = true;
+
+            // add money
+            mylab.Text = "   "; 
+            mylab.BackColor = Color.Gold;
+            mylab.AutoSize = true;
+            mylab.Location = new Point(random.Next(254), random.Next(254));
+            this.Controls.Add(mylab);
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e) // TIMER need development
         {
+            
             if (btnHero.Left >= this.ClientSize.Width - btnHero.Width
                 || btnHero.Top >= this.ClientSize.Height - btnHero.Height)
             {

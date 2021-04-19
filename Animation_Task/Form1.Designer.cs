@@ -136,10 +136,10 @@ namespace Animation_Task
             // 
             // btnHero
             // 
-            this.btnHero.Image = global::Animation_Task.Properties.Resources.povezlo_povezlo_original;
-            this.btnHero.Location = new System.Drawing.Point(111, 103);
+            this.btnHero.Image = global::Animation_Task.Properties.Resources.bird;
+            this.btnHero.Location = new System.Drawing.Point(110, 150);
             this.btnHero.Name = "btnHero";
-            this.btnHero.Size = new System.Drawing.Size(195, 214);
+            this.btnHero.Size = new System.Drawing.Size(80, 94);
             this.btnHero.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnHero.TabIndex = 9;
             this.btnHero.TabStop = false;
