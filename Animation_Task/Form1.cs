@@ -19,12 +19,14 @@ namespace Animation_Task
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            btnStop.Enabled = false;
+            btnStop.Enabled = false; // default stop = false
+
+            // STYLED HEAD PANEL
+
             //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             //this.WindowState = FormWindowState.Minimized;
             //this.ControlBox = false;
             //FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-
         }
 
         private void button2_Click(object sender, EventArgs e) // STOP
@@ -37,7 +39,6 @@ namespace Animation_Task
 
         private void button1_Click(object sender, EventArgs e) // START
         {
-
             timer1.Start();
             btnStart.Enabled = false;
             btnStop.Enabled = true;
@@ -45,23 +46,23 @@ namespace Animation_Task
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
+            if (btnHero.Left >= this.ClientSize.Width - btnHero.Width
+                || btnHero.Top >= this.ClientSize.Height - btnHero.Height)
+            {
+                btnHero.Left = 0;
+                btnHero.Top = 0; //  Height - height image
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
+        } // EXIT button
 
         private void button1_Click_1(object sender, EventArgs e) // >
         {
-            if ((btnHero.Left + button1.Width) > this.ClientSize.Width)
-            { btnHero.Left = this.ClientSize.Width - button1.Width; }
-            else
-            {
-                if (timer1.Enabled)
-                    btnHero.Left -= 10;
-            }
+            if (timer1.Enabled)
+                btnHero.Left -= 10;
         }
 
         private void button3_Click(object sender, EventArgs e) // down
@@ -89,6 +90,11 @@ namespace Animation_Task
                 btnHero.Top -= 30;
             }
 
-        }
+        } // SPACE || JUMP button
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        } // setting picture box
     }
 }
