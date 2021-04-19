@@ -40,6 +40,7 @@ namespace Animation_Task
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.btnSpace = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStart
@@ -73,7 +74,6 @@ namespace Animation_Task
             this.btnHero.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHero.AutoSize = true;
             this.btnHero.BackColor = System.Drawing.Color.Red;
             this.btnHero.Location = new System.Drawing.Point(247, 49);
             this.btnHero.Name = "btnHero";
@@ -85,7 +85,7 @@ namespace Animation_Task
             // 
             this.btnExit.Location = new System.Drawing.Point(12, 12);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(21, 24);
+            this.btnExit.Size = new System.Drawing.Size(21, 31);
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "x";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -93,26 +93,29 @@ namespace Animation_Task
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.Location = new System.Drawing.Point(615, 391);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(54, 47);
             this.button1.TabIndex = 4;
-            this.button1.Text = "← ";
+            this.button1.Text = "←";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // button2
             // 
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button2.Location = new System.Drawing.Point(675, 391);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(54, 47);
             this.button2.TabIndex = 5;
-            this.button2.Text = "↓ ";
+            this.button2.Text = "↓";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // button3
             // 
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button3.Location = new System.Drawing.Point(675, 338);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(54, 47);
@@ -123,19 +126,30 @@ namespace Animation_Task
             // 
             // button4
             // 
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button4.Location = new System.Drawing.Point(735, 391);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(54, 47);
             this.button4.TabIndex = 7;
-            this.button4.Text = "→ ";
+            this.button4.Text = "→";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // btnSpace
+            // 
+            this.btnSpace.Location = new System.Drawing.Point(331, 391);
+            this.btnSpace.Name = "btnSpace";
+            this.btnSpace.Size = new System.Drawing.Size(257, 47);
+            this.btnSpace.TabIndex = 8;
+            this.btnSpace.UseVisualStyleBackColor = true;
+            this.btnSpace.Click += new System.EventHandler(this.btnSpace_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSpace);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -149,7 +163,6 @@ namespace Animation_Task
             this.Text = "Chorrny Game Inc";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -164,6 +177,7 @@ namespace Animation_Task
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnSpace;
     }
 }
 
