@@ -42,7 +42,9 @@ namespace Animation_Task
             this.btnSpace = new System.Windows.Forms.Button();
             this.btnHero = new System.Windows.Forms.PictureBox();
             this.lblScore = new System.Windows.Forms.Label();
+            this.newPic = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnHero)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newPic)).BeginInit();
             this.SuspendLayout();
             // 
             // btnStart
@@ -155,11 +157,22 @@ namespace Animation_Task
             this.lblScore.TabIndex = 10;
             this.lblScore.Text = "Score : ";
             // 
+            // newPic
+            // 
+            this.newPic.Image = global::Animation_Task.Properties.Resources.dollar;
+            this.newPic.Location = new System.Drawing.Point(273, 173);
+            this.newPic.Name = "newPic";
+            this.newPic.Size = new System.Drawing.Size(43, 44);
+            this.newPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.newPic.TabIndex = 11;
+            this.newPic.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.newPic);
             this.Controls.Add(this.lblScore);
             this.Controls.Add(this.btnHero);
             this.Controls.Add(this.btnSpace);
@@ -177,6 +190,7 @@ namespace Animation_Task
             this.Text = "Chorrny Game Inc";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnHero)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newPic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,6 +209,7 @@ namespace Animation_Task
         private System.Windows.Forms.Button btnSpace;
         private System.Windows.Forms.PictureBox btnHero;
         private System.Windows.Forms.Label lblScore;
+        private System.Windows.Forms.PictureBox newPic;
     }
 }
 

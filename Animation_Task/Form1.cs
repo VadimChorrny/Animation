@@ -14,7 +14,7 @@ namespace Animation_Task
     {
         // variable
         Random random = new Random();
-        PictureBox newPic = new PictureBox();
+        //PictureBox newPic = new PictureBox();
         int counter;
         int counterMoney;
         public Form1()
@@ -66,22 +66,20 @@ namespace Animation_Task
             }
 
             // that money appear periodically
-            if (counter == 500)
+            if (counter == 1500)
             {
                 // here i create new picturebox (money)
-                newPic.Image = new Bitmap("C:/Users/vadim_oyanwuw/Desktop/dollar.png"); // link on coin,don't worked :(
-                newPic.Location = new Point(random.Next(254), random.Next(254));
-                newPic.BackColor = Color.Gold;
+                newPic.Location = new Point(random.Next(254), random.Next(254)); // if state 254,254,and hero 254,254 - worked
                 this.Controls.Add(newPic);
                 newPic.BringToFront();
-
                 // here i check if the hero and the money are in the same position,
                 // it becomes invisible
-                if (btnHero.Location.X == newPic.Location.X
-                    && btnHero.Location.Y == newPic.Location.Y)
+                if (btnHero.Location.X+50 == newPic.Location.X
+                    && btnHero.Location.Y+50 == newPic.Location.Y)
                 {
+                    newPic.Dispose();
                     counterMoney++; // add counter
-                    newPic.Visible = false;
+                    //newPic.Visible = false;
                     counter = 0;
                 }
                 counter = 0;
