@@ -26,14 +26,8 @@ namespace Animation_Task
         {
             btnStop.Enabled = false; // default stop = false
             btnHero.Image = new Bitmap("C:/Users/vadim_oyanwuw/Desktop/bird.png");
-            //// Creating label using Label class
-            //Label mylab = new Label();
-            //mylab.BackColor = Color.Gold;
-            //mylab.Location = new Point(random.Next(254), random.Next(254));
-
 
             // STYLED HEAD PANEL
-
             //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             //this.WindowState = FormWindowState.Minimized;
             //this.ControlBox = false;
@@ -60,26 +54,35 @@ namespace Animation_Task
 
         private void timer1_Tick(object sender, EventArgs e) // TIMER need development
         {
-            counter++;
-            lblScore.Text = "Score : " + counterMoney;
+            counter++; // counter for long time
+            lblScore.Text = "Score : " + counterMoney; // output money on form1
+
+            // check borders | need development - worked only left and top 
             if (btnHero.Left >= this.ClientSize.Width - btnHero.Width
                 || btnHero.Top >= this.ClientSize.Height - btnHero.Height)
             {
                 btnHero.Left = 0;
                 btnHero.Top = 0; //  Height - height image
             }
+
+            // that money appear periodically
             if (counter == 500)
             {
-                newPic.Image = new Bitmap("C:/Users/vadim_oyanwuw/Desktop/dollar.png"); // link on coin 
+                // here i create new picturebox (money)
+                newPic.Image = new Bitmap("C:/Users/vadim_oyanwuw/Desktop/dollar.png"); // link on coin,don't worked :(
                 newPic.Location = new Point(random.Next(254), random.Next(254));
                 newPic.BackColor = Color.Gold;
                 this.Controls.Add(newPic);
                 newPic.BringToFront();
+
+                // here i check if the hero and the money are in the same position,
+                // it becomes invisible
                 if (btnHero.Location.X == newPic.Location.X
                     && btnHero.Location.Y == newPic.Location.Y)
                 {
-                    counterMoney++;
+                    counterMoney++; // add counter
                     newPic.Visible = false;
+                    counter = 0;
                 }
                 counter = 0;
             }
@@ -128,12 +131,6 @@ namespace Animation_Task
 
         } // setting picture box
 
-        private void CheckPlace(Point player, Point money)
-        {
-            if (player.X == money.X && player.Y == money.Y)
-            {
-                newPic.Dispose();
-            }
-        }
+
     }
 }
