@@ -14,7 +14,9 @@ namespace Animation_Task
     {
         // variable
         Random random = new Random();
-        Label mylab = new Label();
+        PictureBox newPic = new PictureBox();
+        int counter;
+        //int counterMoney;
         public Form1()
         {
             InitializeComponent();
@@ -23,7 +25,7 @@ namespace Animation_Task
         private void Form1_Load(object sender, EventArgs e)
         {
             btnStop.Enabled = false; // default stop = false
-
+            btnHero.Image = new Bitmap("C:/Users/vadim_oyanwuw/Desktop/bird.png");
             //// Creating label using Label class
             //Label mylab = new Label();
             //mylab.BackColor = Color.Gold;
@@ -53,22 +55,28 @@ namespace Animation_Task
             btnStart.Enabled = false;
             btnStop.Enabled = true;
 
-            // add money
-            mylab.Text = "   "; 
-            mylab.BackColor = Color.Gold;
-            mylab.AutoSize = true;
-            mylab.Location = new Point(random.Next(254), random.Next(254));
-            this.Controls.Add(mylab);
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e) // TIMER need development
         {
+            counter++;
             
             if (btnHero.Left >= this.ClientSize.Width - btnHero.Width
                 || btnHero.Top >= this.ClientSize.Height - btnHero.Height)
             {
                 btnHero.Left = 0;
                 btnHero.Top = 0; //  Height - height image
+            }
+            if(counter == 1000)
+            {
+                // add money
+                newPic.Image = new Bitmap("C:/Users/vadim_oyanwuw/Desktop/dollar.png"); // link on coin 
+                newPic.Location = new Point(random.Next(254), random.Next(254));
+                newPic.BackColor = Color.Gold;
+                this.Controls.Add(newPic);
+                newPic.BringToFront();
+                counter = 0;
             }
         }
 
