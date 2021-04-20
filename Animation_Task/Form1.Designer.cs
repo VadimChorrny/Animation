@@ -43,6 +43,8 @@ namespace Animation_Task
             this.btnHero = new System.Windows.Forms.PictureBox();
             this.lblScore = new System.Windows.Forms.Label();
             this.newPic = new System.Windows.Forms.PictureBox();
+            this.lblInfo = new System.Windows.Forms.Label();
+            this.lblInfoMoney = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnHero)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.newPic)).BeginInit();
             this.SuspendLayout();
@@ -151,7 +153,7 @@ namespace Animation_Task
             // 
             this.lblScore.AutoSize = true;
             this.lblScore.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblScore.Location = new System.Drawing.Point(220, 18);
+            this.lblScore.Location = new System.Drawing.Point(126, 18);
             this.lblScore.Name = "lblScore";
             this.lblScore.Size = new System.Drawing.Size(96, 35);
             this.lblScore.TabIndex = 10;
@@ -167,11 +169,33 @@ namespace Animation_Task
             this.newPic.TabIndex = 11;
             this.newPic.TabStop = false;
             // 
+            // lblInfo
+            // 
+            this.lblInfo.AutoSize = true;
+            this.lblInfo.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblInfo.Location = new System.Drawing.Point(12, 337);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(204, 35);
+            this.lblInfo.TabIndex = 12;
+            this.lblInfo.Text = "Hero Cordinate : ";
+            // 
+            // lblInfoMoney
+            // 
+            this.lblInfoMoney.AutoSize = true;
+            this.lblInfoMoney.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblInfoMoney.Location = new System.Drawing.Point(12, 382);
+            this.lblInfoMoney.Name = "lblInfoMoney";
+            this.lblInfoMoney.Size = new System.Drawing.Size(218, 35);
+            this.lblInfoMoney.TabIndex = 13;
+            this.lblInfoMoney.Text = "Money Cordinate :";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblInfoMoney);
+            this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.newPic);
             this.Controls.Add(this.lblScore);
             this.Controls.Add(this.btnHero);
@@ -210,6 +234,8 @@ namespace Animation_Task
         private System.Windows.Forms.PictureBox btnHero;
         private System.Windows.Forms.Label lblScore;
         private System.Windows.Forms.PictureBox newPic;
+        private System.Windows.Forms.Label lblInfo;
+        private System.Windows.Forms.Label lblInfoMoney;
     }
 }
 

@@ -56,6 +56,7 @@ namespace Animation_Task
         {
             counter++; // counter for long time
             lblScore.Text = "Score : " + counterMoney; // output money on form1
+            lblInfo.Text = btnHero.Location.ToString();
 
             // check borders | need development - worked only left and top 
             if (btnHero.Left >= this.ClientSize.Width - btnHero.Width
@@ -66,21 +67,23 @@ namespace Animation_Task
             }
 
             // that money appear periodically
-            if (counter == 1500)
+            if (counter == 2100)
             {
                 // here i create new picturebox (money)
                 newPic.Location = new Point(random.Next(254), random.Next(254)); // if state 254,254,and hero 254,254 - worked
                 this.Controls.Add(newPic);
                 newPic.BringToFront();
+                lblInfoMoney.Text = newPic.Location.ToString();
+
                 // here i check if the hero and the money are in the same position,
                 // it becomes invisible
-                if (btnHero.Location.X+50 == newPic.Location.X
-                    && btnHero.Location.Y+50 == newPic.Location.Y)
+                if (btnHero.Location.X == newPic.Location.X
+                    && btnHero.Location.Y == newPic.Location.Y)
                 {
+                    counter = 0;
                     newPic.Dispose();
                     counterMoney++; // add counter
                     //newPic.Visible = false;
-                    counter = 0;
                 }
                 counter = 0;
             }
@@ -94,25 +97,25 @@ namespace Animation_Task
         private void button1_Click_1(object sender, EventArgs e) // >
         {
             if (timer1.Enabled)
-                btnHero.Left -= 10;
+                btnHero.Left -= 1;
         }
 
         private void button3_Click(object sender, EventArgs e) // down
         {
             if (timer1.Enabled)
-                btnHero.Top -= 10;
+                btnHero.Top -= 1;
         }
 
         private void button2_Click_1(object sender, EventArgs e) // top
         {
             if (timer1.Enabled)
-                btnHero.Top += 10;
+                btnHero.Top += 1;
         }
 
         private void button4_Click(object sender, EventArgs e) // <
         {
             if (timer1.Enabled)
-                btnHero.Left += 10;
+                btnHero.Left += 1;
         }
 
         private void btnSpace_Click(object sender, EventArgs e)
@@ -128,7 +131,5 @@ namespace Animation_Task
         {
 
         } // setting picture box
-
-
     }
 }
