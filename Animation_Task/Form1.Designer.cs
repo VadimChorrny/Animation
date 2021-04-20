@@ -41,6 +41,7 @@ namespace Animation_Task
             this.button4 = new System.Windows.Forms.Button();
             this.btnSpace = new System.Windows.Forms.Button();
             this.btnHero = new System.Windows.Forms.PictureBox();
+            this.lblScore = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnHero)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,11 +145,22 @@ namespace Animation_Task
             this.btnHero.TabStop = false;
             this.btnHero.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // lblScore
+            // 
+            this.lblScore.AutoSize = true;
+            this.lblScore.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblScore.Location = new System.Drawing.Point(220, 18);
+            this.lblScore.Name = "lblScore";
+            this.lblScore.Size = new System.Drawing.Size(96, 35);
+            this.lblScore.TabIndex = 10;
+            this.lblScore.Text = "Score : ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblScore);
             this.Controls.Add(this.btnHero);
             this.Controls.Add(this.btnSpace);
             this.Controls.Add(this.button4);
@@ -166,6 +178,7 @@ namespace Animation_Task
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnHero)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -181,6 +194,7 @@ namespace Animation_Task
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnSpace;
         private System.Windows.Forms.PictureBox btnHero;
+        private System.Windows.Forms.Label lblScore;
     }
 }
 

@@ -16,7 +16,7 @@ namespace Animation_Task
         Random random = new Random();
         PictureBox newPic = new PictureBox();
         int counter;
-        //int counterMoney;
+        int counterMoney;
         public Form1()
         {
             InitializeComponent();
@@ -55,27 +55,32 @@ namespace Animation_Task
             btnStart.Enabled = false;
             btnStop.Enabled = true;
 
-            
+
         }
 
         private void timer1_Tick(object sender, EventArgs e) // TIMER need development
         {
             counter++;
-            
+            lblScore.Text = "Score : " + counterMoney;
             if (btnHero.Left >= this.ClientSize.Width - btnHero.Width
                 || btnHero.Top >= this.ClientSize.Height - btnHero.Height)
             {
                 btnHero.Left = 0;
                 btnHero.Top = 0; //  Height - height image
             }
-            if(counter == 1000)
+            if (counter == 500)
             {
-                // add money
                 newPic.Image = new Bitmap("C:/Users/vadim_oyanwuw/Desktop/dollar.png"); // link on coin 
                 newPic.Location = new Point(random.Next(254), random.Next(254));
                 newPic.BackColor = Color.Gold;
                 this.Controls.Add(newPic);
                 newPic.BringToFront();
+                if (btnHero.Location.X == newPic.Location.X
+                    && btnHero.Location.Y == newPic.Location.Y)
+                {
+                    counterMoney++;
+                    newPic.Visible = false;
+                }
                 counter = 0;
             }
         }
@@ -122,5 +127,13 @@ namespace Animation_Task
         {
 
         } // setting picture box
+
+        private void CheckPlace(Point player, Point money)
+        {
+            if (player.X == money.X && player.Y == money.Y)
+            {
+                newPic.Dispose();
+            }
+        }
     }
 }
