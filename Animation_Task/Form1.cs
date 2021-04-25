@@ -25,7 +25,7 @@ namespace Animation_Task
         private void Form1_Load(object sender, EventArgs e)
         {
             btnStop.Enabled = false; // default stop = false
-            btnHero.Image = new Bitmap("C:/Users/vadim_oyanwuw/Desktop/bird.png");
+            
 
             // STYLED HEAD PANEL
             //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -48,8 +48,6 @@ namespace Animation_Task
             timer1.Start();
             btnStart.Enabled = false;
             btnStop.Enabled = true;
-
-
         }
 
         private void timer1_Tick(object sender, EventArgs e) // TIMER need development
@@ -65,22 +63,21 @@ namespace Animation_Task
                 btnHero.Left = 0;
                 btnHero.Top = 0; //  Height - height image
             }
-
             // that money appear periodically
-            if (counter == 2100)
+            if (counter == 3100)
             {
                 // here i create new picturebox (money)
-                newPic.Location = new Point(random.Next(254), random.Next(254)); // if state 254,254,and hero 254,254 - worked
+                newPic.Location = new Point(254,254); // if state 254,254,and hero 254,254 - worked
                 this.Controls.Add(newPic);
                 newPic.BringToFront();
                 lblInfoMoney.Text = newPic.Location.ToString();
 
+                //btnHero.Location = new Point(254, 254);
+
                 // here i check if the hero and the money are in the same position,
                 // it becomes invisible
-                if (btnHero.Location.X == newPic.Location.X
-                    && btnHero.Location.Y == newPic.Location.Y)
+                if (btnHero.Location.X > newPic.Location.X && btnHero.Location.X < newPic.Location.X + newPic.Width )
                 {
-                    counter = 0;
                     newPic.Dispose();
                     counterMoney++; // add counter
                     //newPic.Visible = false;

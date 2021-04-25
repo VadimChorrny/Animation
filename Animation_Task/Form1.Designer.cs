@@ -141,6 +141,7 @@ namespace Animation_Task
             // 
             // btnHero
             // 
+            this.btnHero.Image = global::Animation_Task.Properties.Resources.bird;
             this.btnHero.Location = new System.Drawing.Point(110, 150);
             this.btnHero.Name = "btnHero";
             this.btnHero.Size = new System.Drawing.Size(80, 94);
